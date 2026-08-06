@@ -1,0 +1,17 @@
+resource_group_name = "vexar-rg"
+
+location = "East US"
+
+container_registry_name = "vexaracr"
+
+container_app_environment_name = "vexar-env"
+
+container_app_name = "fleet-ping-service"
+
+postgres_server_name = "vexar-postgres"
+
+postgres_database_name = "vexar_fleet"
+
+key_vault_name = "vexar-keyvault"
+
+log_analytics_name = "vexar-logs"
