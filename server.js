@@ -27,6 +27,27 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 });
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) {
+    return res.status(401).json({
+      error: "Access token required",
+    });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch {
+    return res.status(403).json({
+      error: "Invalid token",
+    });
+  }
+}
 
 app.get("/", (req, res) => {
   res.send("Fleet Ping Service Running");
@@ -97,6 +118,20 @@ app.post("/api/auth/login", async (req, res) => {
     );
 
     res.json({ token });
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/api/admin/drivers", authenticateToken, async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM drivers");
+
+    res.json(result.rows);
   } catch (err) {
     console.error(err);
 
