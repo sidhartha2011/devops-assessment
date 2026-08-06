@@ -212,5 +212,3 @@ The Fleet Ping Service has been enhanced to improve production readiness, securi
 The required security improvements, Docker support, Kubernetes manifests, and Terraform Infrastructure as Code have been implemented.
 
 A live Azure deployment and GitHub Actions deployment to Azure could not be completed because an Azure subscription and the required Azure credentials were not available, as permitted by the assessment instructions.
-
-Your assessment brief contains the requirements, expected deliverables, and submission instructions.
