@@ -13,10 +13,7 @@ The service is configured to use PostgreSQL for persistent storage and is contai
 * PostgreSQL
 * Docker
 * Kubernetes
-<<<<<<< HEAD
-=======
 * Terraform
->>>>>>> 4b9492d (Add Terraform infrastructure and update README)
 * GitHub Actions
 * Azure (Architecture Design)
 
@@ -57,13 +54,8 @@ The service provides the following endpoints:
 * Driver login
 * Vehicle location ping ingestion
 * Fleet ping retrieval
-<<<<<<< HEAD
 * Health check (`GET /health`)
 * Readiness check (`GET /ready`)
-=======
-* Health endpoint (`/health`)
-* Readiness endpoint (`/ready`)
->>>>>>> 4b9492d (Add Terraform infrastructure and update README)
 
 Refer to the application source for endpoint definitions, request formats, and current behavior.
 
@@ -143,9 +135,6 @@ secret.yaml
 
 Application configuration is managed through environment variables.
 
-<<<<<<< HEAD
-An example configuration is provided in `.env.example`.
-=======
 The following variables are required:
 
 ```env
@@ -162,8 +151,7 @@ JWT_SECRET=your_jwt_secret
 
 For local development, these values can be stored in a `.env` file.
 
-For production deployments, sensitive information such as database credentials and JWT secrets should not be stored in the repository. Instead, they should be managed securely using Azure Key Vault or the CI/CD platform's secret management capabilities.
->>>>>>> 4b9492d (Add Terraform infrastructure and update README)
+For production deployments, sensitive information such as database credentials and JWT secrets should not be stored in the repository. Instead, they should be managed securely using Azure Key Vault or GitHub Actions Secrets.(Add Terraform infrastructure and update README)
 
 ## CI/CD
 
@@ -183,9 +171,6 @@ Changes pushed to the `main` branch trigger the deployment workflow.
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   ├── configmap.yaml
-<<<<<<< HEAD
-│   └── secret.yaml
-=======
 │   ├── secret.yaml
 ├── terraform/
 │   ├── provider.tf
@@ -193,8 +178,7 @@ Changes pushed to the `main` branch trigger the deployment workflow.
 │   ├── main.tf
 │   ├── outputs.tf
 │   ├── terraform.tfvars.example
-│   └── README.md
->>>>>>> 4b9492d (Add Terraform infrastructure and update README)
+│   └── README.md (Add Terraform infrastructure and update README)
 ├── Dockerfile
 ├── docker-compose.yml
 ├── .env.example
@@ -229,4 +213,4 @@ The required security improvements, Docker support, Kubernetes manifests, and Te
 
 A live Azure deployment and GitHub Actions deployment to Azure could not be completed because an Azure subscription and the required Azure credentials were not available, as permitted by the assessment instructions.
 
-Your assessment brief contains the requirements, expected deliverables, and submission instructions.(Add Terraform infrastructure and update README)
+Your assessment brief contains the requirements, expected deliverables, and submission instructions.
